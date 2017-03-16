@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="/admin/css/app.css">
+
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <h4 class="col-md-10">法律法规文件管理</h4>
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <th>序号</th>
+                    <th>文件名称</th>
+                    <th>文件编号</th>
+                    <th>种类</th>
+                    <th>文件描述</th>
+                    <th>执行日期</th>
+                    <th>是否审批</th>
+                    <th>审批人</th>
+                    <th>审批日期</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                         修改
+                        </button>
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                </tr>
+            </table>
+            <div class="tcdPageCode"></div>
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <h5 class="col-md-4">点击文件可查看详细资料</h5>
+                <div class="col-md-4 pull-right">
+                    <input type="checkbox">全部选择
+                    <button class="btn btn-success">删除文件</button>
+                    <button type="button" class="btn btn-primary">
+                     添加文件
+                    </button>
+                    <button class="btn btn-success">上报审批</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="/admin/js/jquery.page.js"></script>
+    <script src="/admin/js/law-manage.js"></script>
+
+</body>
+
+</html>
