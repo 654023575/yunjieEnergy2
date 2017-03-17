@@ -5,62 +5,58 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <title>法律法规管理</title>
-
+    <title>能耗数据</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         tr th,
-        tr td{
+        tr td {
             text-align: center;
         }
     </style>
 </head>
 
 <body>
-
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="row">
-                <h4 class="col-md-10">法律法规文件管理</h4>
-
+                <h4 class="col-md-2">能耗数据</h4>
+                <form class="form-inline" action="">
+                    <input type="text" class="form-control">
+                    <input type="submit" class="btn btn-success" value="确定">
+                </form>
             </div>
         </div>
         <div class="panel-body">
             <table class="table table-bordered table-condensed">
-                <tr>
-                    <th>序号</th>
-                    <th>文件名称</th>
-                    <th>文件编号</th>
-                    <th>种类</th>
-                    <th>文件描述</th>
-                    <th>执行日期</th>
-                    <th>是否审批</th>
-                    <th>审批人</th>
-                    <th>审批日期</th>
-                    <th>编辑</th>
-                    <th>删除</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-primary">
-                         修改
-                        </button>
-                    </td>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>部门</th>
+                        <th>时间</th>
+                        <th>能源种类</th>
+                        <th>数量</th>
+                        <th colspan="2">操作</th>
+                        <th>登记人</th>
+                        <th>登记时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-success">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
-            <nav aria-label="Page navigation">
+            <nav aria-label="Page navigation" class="pull-right">
                 <ul class="pagination">
                     <li>
                         <a href="#" aria-label="Previous">
@@ -90,26 +86,20 @@
                 </ul>
             </nav>
         </div>
-
         <div class="panel-footer">
             <div class="row">
-                <h5 class="col-md-4">点击文件可查看详细资料</h5>
-                <div class="col-md-4 pull-right">
-                    <input type="checkbox">全部选择
-                    <button class="btn btn-success">删除文件</button>
-                    <button type="button" class="btn btn-primary">
-                     添加文件
-                    </button>
-                    <button class="btn btn-success">上报审批</button>
-
+                <div class="col-md-2 pull-right">
+                    <a href="monpower-add.html"><button type="button" class="btn btn-default">添加</button></a>
+                    <a href="mon-data.html"><button type="button" class="btn btn-primary">参数设置</button></a>
                 </div>
             </div>
         </div>
     </div>
+
+
     <script src="../bootstrap/js/jquery.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="../js/bootstrap.page.js"></script>
-
 </body>
 
 </html>

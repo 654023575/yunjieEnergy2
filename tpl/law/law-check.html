@@ -6,12 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>法律法规审查</title>
-         <link rel="stylesheet" href="/admin/css/app.css">
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        tr th,
+        tr td{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <div class="row">
                 <h4 class="col-md-2">法律法规文件审批</h4>
@@ -61,7 +66,35 @@
 
                 </tbody>
             </table>
-            <div class="tcdPageCode"></div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <div class="panel-footer">
             <div class="row">
@@ -72,8 +105,7 @@
     </div>
     <script src="../bootstrap/js/jquery.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="/admin/js/jquery.page.js"></script>
-    <script src="/admin/js/law-manage.js"></script>
+    <script src="../js/bootstrap.page.js"></script>
 
 </body>
 
