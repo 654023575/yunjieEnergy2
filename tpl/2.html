@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <title>无标题页</title>
+    <script src="bootstrap/js/jquery.js"></script>
+</head>
+
+<body>
+    <p></p>
+    <img id="my" src="loading.gif" style="display: block;margin: 100px auto;">
+    <script>
+        $(document).ready(function(){
+         function text1(){
+             $("#my").fadeOut(1000,function(){
+             $("p").text("缓慢加载出来");                        
+             });
+          }
+           $("#my").fadeIn(1000,function(){
+                text1();
+            })
+        });
+    </script>
+</body>
+
+</html>

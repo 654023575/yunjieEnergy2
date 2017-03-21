@@ -1,0 +1,35 @@
+law 法律法规
+monitor 能源环保
+  mon-power 
+  monpower-add
+  monpower-edit
+  mon-data 
+  mondata-add
+  mondata-edit
+environment 环保监测模块
+  environ-mon  环保监测数据
+  environ-add  环保监测数据增加
+  environ-edit  环保监测数据修改
+  environ-data  环保监测参数
+  envidata-add  环保监测参数增加
+  envidata-edit  环保监测参数修改  
+target 目标指标模块管理
+  tarproposal-add 新建能耗目标提案
+  target-env 环保目标
+  targetenv-add 环保目标添加
+  targetenv-edit 修改
+  target-data 环保参数
+  tardata-add 环保参数添加
+  tardata-edit 环保参数修改
+equipment 重点能耗
+  energy-manage 重点能耗设备管理
+  enemanage-add 重点能耗设备添加
+  enemanage-edit 重点能耗设备修改
+  metering-manage 计量设备管理
+  metmanage-add 计量设备添加
+  metmanage-edit 计量设备修改
+  testmet-manage 检定计量设备管理
+  testmet-add 检定计量设备录入
+  testmet-edit 检定计量设备修改
+  
+

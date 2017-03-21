@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>重点能耗设备修改</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <h4 class="col-md-10">重点能耗设备修改</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">设备名称：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <label class="col-sm-2 control-label">设备编号：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">设备类别：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>机器</option>
+                                    <option>机器</option>
+                                    <option>机器</option>
+                                    <option>机器</option>
+                                    <option>机器</option>
+                                </select>
+                                </div>
+                                <label class="col-sm-2 control-label">生产厂商：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>厂商1</option>
+                                    <option>厂商1</option>
+                                    <option>厂商1</option>
+                                    <option>厂商1</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">主要能耗：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>水</option>
+                                    <option>电</option>
+                                    <option>水</option>
+                                    <option>电</option>
+                                </select>
+                                </div>
+                                <label class="col-sm-2 control-label">总功率：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">购置时间：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 control-label">资产原值：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">折旧方法：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>不计提折旧</option>
+                                    <option>平均年限法</option>
+                                    <option>年限总和法</option>
+                                    <option>双倍余额递减法</option>
+                                </select>
+                                </div>
+                                <label class="col-sm-2 control-label">折旧年限：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">使用状况：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>未启用</option>
+                                    <option>再用</option>
+                                    <option>维修中</option>
+                                    <option>停用</option>
+                                    <option>封存</option>
+                                    <option>报废</option>
+                                </select>
+                                </div>
+                                <label class="col-sm-2 control-label">使用部门：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>部门1</option>
+                                    <option>部门1</option>
+                                    <option>部门1</option>
+                                    <option>部门1</option>
+                                </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">操作人员：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 control-label">安装地点：</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control">
+                                    <option>地点1</option>
+                                    <option>地点1</option>
+                                    <option>地点1</option>
+                                    <option>地点1</option>
+                                    <option>地点1</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">净残率%：</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="from-group">
+                                <div class="col-md-3 pull-right">
+                                    <input type="submit" class="btn btn-warning" value="取消">
+                                    <input type="submit" class="btn btn-success" value="确定">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

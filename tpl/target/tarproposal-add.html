@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <title>新建能源指标目标提案</title>
+    <title>新建能耗指标目标提案</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         tr td {
@@ -29,11 +29,12 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">现状描述：</label>
                                 <div class="col-sm-8">
-                                   <textarea class="form-control" rows="3"></textarea> 
-                                </select>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                    </select>
                                 </div>
                             </div>
-                            <p>目标指标能耗提案内容</p>
+                            <label class="control-label">目标能耗指标提案内容</label>
+                            <hr>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">单位：</label>
                                 <div class="col-sm-4">
@@ -54,43 +55,33 @@
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
+                            <hr>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">能源单价：</label>
                                 <div class="col-sm-8">
-                                    <div class="input-group">
-                                        <input type="password" class="form-control">
-                                        <span class="input-group-addon">{{symbols1}}</span>
-                                    </div>
+                                    <input type="password" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">折标系数：</label>
                                 <div class="col-sm-8">
-                                    <div class="input-group">
-                                        <input type="password" class="form-control">
-                                        <span class="input-group-addon">{{symbols}}</span>
-                                    </div>
+                                    <input type="password" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">碳排单价：</label>
                                 <div class="col-sm-8">
-                                    <div class="input-group">
-                                        <input type="password" class="form-control">
-                                        <span class="input-group-addon">{{symbols1}}</span>
-                                    </div>
+                                    <input type="password" class="form-control">
                                 </div>
                             </div>
+                            <hr>
                             <div class="from-group">
                                 <div class="col-md-4 pull-right">
-                                   <input type="submit" class="btn btn-warning" value="取消">
+                                    <input type="submit" class="btn btn-warning" value="取消">
                                     <input type="submit" class="btn btn-success" value="确定">
                                 </div>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="panel-footer">
                     </div>
                 </div>
             </div>

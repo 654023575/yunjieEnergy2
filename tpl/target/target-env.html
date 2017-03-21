@@ -21,14 +21,10 @@
         <div class="panel-heading">
             <div class="row">
                 <h4 class="col-md-2">环保目标</h4>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">查询</button>
-                        </span>
-                    </div>
-                </div>
+                <form class="form-inline" action="">
+                    <input type="text" class="form-control">
+                    <input type="submit" class="btn btn-success" value="查询">
+                </form>
             </div>
         </div>
         <div class="panel-body">
@@ -150,9 +146,11 @@
         <div class="panel-footer">
             <div class="row">
                 <div class="col-md-1 pull-right">
+                    <a href="targetenv-add.html">
                     <button class="btn btn-primary">
                     添加
                    </button>
+                   </a>
                 </div>
             </div>
         </div>
