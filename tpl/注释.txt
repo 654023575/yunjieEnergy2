@@ -31,5 +31,24 @@ equipment 重点能耗
   testmet-manage 检定计量设备管理
   testmet-add 检定计量设备录入
   testmet-edit 检定计量设备修改
-  
-
+emergency 应急管理模块
+  emerg-plan 应急预案文件管理  
+  emergplan-add 添加应急预案
+  emergplan-edit 修改应急预案
+  emerg-drill 应急演练文件管理
+  emergdrill-add 添加应急演练
+  emergdrill-edit 修改应急演练
+teach 教育培训管理 
+  teach-train 教育培训管理
+  teach-add 教育培训人员录入
+  teach-edit 教育培训人员修改
+pollution 污染源预警管理
+  pollution-notice 污染源预警管理
+  pollnotice-add 污染源预警添加
+  pollnotice-edit 污染源预警修改
+  pollution-data 污染源预警参数
+  polldata-add  污染源预警参数添加
+  polldata-edit 污染源预警参数修改
+  threshold-data 污染源阈值参数
+  thredata-add 污染源阈值参数添加
+  thredata-edit 污染源阈值参数修改

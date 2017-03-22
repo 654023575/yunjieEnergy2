@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>应急预案文件管理</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        tr th,
+        tr td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <h4 class="col-md-2">应急预案文件管理</h4>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="关键字">
+                </div>
+                <button class="btn btn-default" type="button">查询</button>
+                <button class="btn btn-default" id="highsearch">高级查询</button>
+            </div>
+            <div class="row" id="myVar" style="display:none">
+                <form class="form-inline col-md-12">
+                    <div class="form-group">
+                        <label>按名称：</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>按编号：</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>按种类：</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>文件名称</th>
+                        <th>文件编号</th>
+                        <th>类别</th>
+                        <th>文件描述</th>
+                        <th>修改</th>
+                        <th>下载</th>
+                        <th>删除</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success">下载</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <h5 class="col-md-4">点击文件可查看详细资料</h5>
+                <div class="col-md-1 pull-right">
+                    <button class="btn btn-primary">添加文件</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../js/bootstrap.page.js"></script>
+    <script>
+        $("#highsearch").click(function(){
+        $("#myVar").toggle();
+         })
+    </script>
+
+</body>
+
+</html>
