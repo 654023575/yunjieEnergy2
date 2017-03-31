@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>教育培训管理</title>
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../datatables/css/jquery.dataTables.css">
     <style>
         tr th,
         tr td {
@@ -20,32 +21,28 @@
         <div class="panel-heading">
             <div class="row">
                 <h4 class="col-md-2">教育培训管理</h4>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="关键字">
-                </div>
-                <button class="btn btn-default" type="button">查询</button>
                 <button class="btn btn-default" id="highsearch">高级查询</button>
-            </div>
-            <div class="row" id="myVar" style="display:none">
-                <form class="form-inline col-md-12">
-                    <div class="form-group">
-                        <label>按名称：</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>按编号：</label>
-                        <input type="email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>按种类：</label>
-                        <input type="email" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-default">查询</button>
-                </form>
+
             </div>
         </div>
         <div class="panel-body">
-            <table class="table table-bordered table-condensed">
+            <div id="myVar" style="display:none">
+                <table class="table table-bordered table-condensed">
+                    <tr id="filter_col1" data-column="0">
+                        <td><label>按序号：</label></td>
+                        <td align="center"><input type="text" class="form-control column_filter" id="col0_filter"></td>
+                    </tr>
+                    <tr id="filter_col2" data-column="1">
+                        <td><label>按姓名：</label></td>
+                        <td align="center"><input type="text" class="form-control column_filter" id="col1_filter"></td>
+                    </tr>
+                    <tr id="filter_col3" data-column="2">
+                        <td><label>按出生年月：</label></td>
+                        <td align="center"><input type="text" class="form-control column_filter" id="col2_filter"></td>
+                    </tr>
+                </table>
+            </div>
+            <table class="table table-bordered table-condensed display" id="example">
                 <thead>
                     <tr>
                         <th>序号</th>
@@ -66,18 +63,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
                         <td>
                             <button class="btn btn-primary">修改</button>
                         </td>
@@ -85,37 +82,370 @@
                             <button class="btn btn-warning">删除</button>
                         </td>
                     </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>21</td>
+                        <td>32</td>
+                        <td>43</td>
+                        <td>54</td>
+                        <td>65</td>
+                        <td>76</td>
+                        <td>87</td>
+                        <td>98</td>
+                        <td>190</td>
+                        <td>191</td>
+                        <td>102</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>76</td>
+                        <td>75</td>
+                        <td>38</td>
+                        <td>93</td>
+                        <td>120</td>
+                        <td>111</td>
+                        <td>172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td>52</td>
+                        <td>63</td>
+                        <td>34</td>
+                        <td>81</td>
+                        <td>716</td>
+                        <td>725</td>
+                        <td>328</td>
+                        <td>923</td>
+                        <td>1320</td>
+                        <td>1311</td>
+                        <td>1172</td>
+                        <td>
+                            <button class="btn btn-primary">修改</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning">删除</button>
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
-            <nav aria-label="Page navigation" class="pull-right">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
         <div class="panel-footer">
             <div class="row">
@@ -125,13 +455,64 @@
             </div>
         </div>
     </div>
-    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../datatables/js/jquery.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="../js/bootstrap.page.js"></script>
+    <script charset="utf-8" src="../datatables/js/jquery.dataTables.min.js"></script>
+    <script charset="utf-8" src="../datatables/js/dataTables.bootstrap.js"></script>
     <script>
         $("#highsearch").click(function(){
         $("#myVar").toggle();
-         })
+         });
+         
+         function filterGlobal () {
+            $('#example').DataTable().search(
+                $('#global_filter').val(),
+                $('#global_regex').prop('checked'),
+                $('#global_smart').prop('checked')
+            ).draw();
+            }
+ 
+        function filterColumn ( i ) {
+            $('#example').DataTable().column( i ).search(
+                $('#col'+i+'_filter').val(),
+                $('#col'+i+'_regex').prop('checked'),
+                $('#col'+i+'_smart').prop('checked')
+            ).draw();
+        }
+        
+         
+       $('#example').DataTable(
+           {
+            // 修改页码               
+            "aLengthMenu": [[5, 10, 25, -1], ["5", "10", "25", "All"]],
+            // 中文
+            "sPaginationType" : "full_numbers",
+            "oLanguage" : {
+                "sLengthMenu": "每页显示 _MENU_ 条记录",
+                "sZeroRecords": "抱歉， 没有找到",
+                "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                "sInfoEmpty": "没有数据",
+                "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                "sZeroRecords": "没有检索到数据",
+                 "sSearch": "模糊查询：",
+                "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "前一页",
+                "sNext": "后一页",
+                "sLast": "尾页"
+                }
+                     
+            }
+           
+        }
+        );
+    $('input.global_filter').on( 'keyup click', function () {
+        filterGlobal();
+    } );
+ 
+    $('input.column_filter').on( 'keyup click', function () {
+        filterColumn( $(this).parents('tr').attr('data-column') );
+    } );
     </script>
 
 </body>

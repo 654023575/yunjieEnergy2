@@ -25,50 +25,45 @@
                     <div class="panel-body">
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">能耗部门：</label>
+                                <label id="label1" class="col-sm-3 control-label">部门：</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control">
-                                    <option>部门1</option>
-                                    <option>部门2</option>
-                                    <option>部门3</option>
-                                    <option>部门4</option>
-                                    <option>部门5</option>
+                                    <select id="select1" class="form-control">
+                                    <option>生产部</option>
+                                    <option>设备部</option>
+                                    <option>物流部</option>
+                                    <option>研发部</option>
+                                    <option>其他</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">负责人：</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control">
-                                    <option>赵1</option>
-                                    <option>赵1</option>
-                                    <option>赵1</option>
-                                    <option>赵1</option>
-                                    <option>赵1</option>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label id="label3" class="col-sm-3 control-label">目标：</label>
+                                <div class="col-sm-8">
+                                    <select id="select3" class="form-control">
+                                    <option>生产废气达标排放</option>
+                                    <option>危险化学品无泄漏</option>
+                                    <option>产品中有害物质</option>
+                                    <option>综合废水达标排放</option>
+                                    <option>其他</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">目标：</label>
+                                <label id="label4" class="col-sm-3 control-label">指标：</label>
                                 <div class="col-sm-8">
-                                    <select class="form-control">
-                                    <option>生产废气达标排放</option>
-                                    <option>生产废气达标排放</option>
-                                    <option>生产废气达标排放</option>
-                                    <option>生产废气达标排放</option>
-                                    <option>生产废气达标排放</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">指标：</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
+                                    <select id="select4" class="form-control">
                                     <option>颗粒物≤1.0mg/m³</option>
                                     <option>颗粒物≤1.0mg/m³</option>
                                     <option>颗粒物≤1.0mg/m³</option>
                                     <option>颗粒物≤1.0mg/m³</option>
                                     <option>颗粒物≤1.0mg/m³</option>
+                                    <option>其他</option>
                                 </select>
                                 </div>
                             </div>
@@ -95,6 +90,25 @@
 
     <script src="../bootstrap/js/jquery.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
+    <script>
+        $("#select1").change(function(){
+            console.log($("#select1").val())
+            if($("#select1").val()=="其他"){
+                $("#label1").text("请输入其他部门：");
+                $("#select1").replaceWith('<input id="input1" type="text" class="form-control">');     
+            }
+        });
+        $("#input1").change()
+        $("#select3").change(function(){
+            console.log($("#select3").val())
+            if($("#select3").val()=="其他"){
+                $("#label3").text("请输入其他目标：");
+                $("#select3").replaceWith('<input type="text" class="form-control" value="">');
+                $("#label4").text("请输入其他指标：");
+                $("#select4").replaceWith('<input type="text" class="form-control" value="">');
+            }
+        });
+    </script>
 </body>
 
 </html>

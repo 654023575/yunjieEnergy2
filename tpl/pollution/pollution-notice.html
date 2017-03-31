@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>污染源预警管理</title>
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../datatables/css/jquery.dataTables.css">
     <style>
         tr th,
         tr td {
@@ -45,7 +46,7 @@
             </div>
         </div>
         <div class="panel-body">
-            <table class="table table-bordered table-condensed">
+            <table class="table table-bordered table-condensed display" id="table1">
                 <thead>
                     <tr>
                         <th>污染源</th>
@@ -83,35 +84,6 @@
                     </tr>
                 </tbody>
             </table>
-            <nav aria-label="Page navigation" class="pull-right">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
         <div class="panel-footer">
             <div class="row">
@@ -122,13 +94,61 @@
             </div>
         </div>
     </div>
-    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../datatables/js/jquery.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="../js/bootstrap.page.js"></script>
+    <script charset="utf-8" src="../datatables/js/jquery.dataTables.min.js"></script>
+    <script charset="utf-8" src="../datatables/js/dataTables.bootstrap.js"></script>
     <script>
         $("#highsearch").click(function(){
         $("#myVar").toggle();
-         })
+         });
+         
+         function filterGlobal () {
+            $('#example').DataTable().search(
+                $('#global_filter').val(),
+                $('#global_regex').prop('checked'),
+                $('#global_smart').prop('checked')
+            ).draw();
+            }
+ 
+        function filterColumn ( i ) {
+            $('#example').DataTable().column( i ).search(
+                $('#col'+i+'_filter').val(),
+                $('#col'+i+'_regex').prop('checked'),
+                $('#col'+i+'_smart').prop('checked')
+            ).draw();
+        }
+        
+         
+       $('#table1').DataTable(
+           {
+            "aLengthMenu": [[5, 10, 25, -1], ["5", "10", "25", "All"]],
+            "sPaginationType" : "full_numbers",
+            "oLanguage" : {
+                "sLengthMenu": "每页显示 _MENU_ 条记录",
+                "sZeroRecords": "抱歉， 没有找到",
+                "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                "sInfoEmpty": "没有数据",
+                "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                "sZeroRecords": "没有检索到数据",
+                 "sSearch": "模糊查询：",
+                "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "前一页",
+                "sNext": "后一页",
+                "sLast": "尾页"
+                }     
+            },
+           
+        }
+        );
+    $('input.global_filter').on( 'keyup click', function () {
+        filterGlobal();
+    } );
+ 
+    $('input.column_filter').on( 'keyup click', function () {
+        filterColumn( $(this).parents('tr').attr('data-column') );
+    } );
     </script>
 
 </body>
